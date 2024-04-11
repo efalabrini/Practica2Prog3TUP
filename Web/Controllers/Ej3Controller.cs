@@ -8,18 +8,33 @@ namespace Web.Controllers
     [ApiController]
     public class Ej3Controller : ControllerBase
     {
-        [HttpGet()]
-        public string Get()
+        [HttpGet("[action]")]
+        public ActionResult<string> CreatePerson([FromQuery] string name, int age)
         {
-            var human1 = new Person("Juanito Flores");
+            var human1 = new Person(name);
+            human1.SetAge(age);
 
-            var human2 = new Student("Julian Gonzales");
-            human2.SetAge(19);
+            return human1.GetSaludo();
+        }
 
-            var human3 = new Profesor("Miguelito Ramirez");
-            human3.SetAge(46);
 
-            return $"Persona:\n{human1.GetSaludo()}\n\nEstudiante:\n{human2.GetSaludo()}\n{human2.SeeAge()}\n\nProfesor:\n{human3.GetSaludo()}\n{human3.Explain()}";
+        [HttpGet("[action]")]
+        public ActionResult<string> CreateStudent([FromQuery] string name, int age)
+        {
+            var human2 = new Student(name);
+            human2.SetAge(age);
+
+            return $"{human2.GetSaludo()}\n{human2.SeeAge()}";
+        }
+
+
+        [HttpGet("[action]")]
+        public ActionResult<string> CreateProfesor([FromQuery] string name, int age)
+        {
+            var human3 = new Profesor(name);
+            human3.SetAge(age);
+
+            return $"{human3.GetSaludo()}\n{human3.Explain()}";
         }
     }
 }
