@@ -2,16 +2,20 @@
 {
     public class PhotoBook
     {
-        private int numPages {  get; set; }
+        private int NumPages {  get; set; }
+        public int Id { get; set; }
+
+        public static int genId = 1;
 
         public PhotoBook(int cantPag = 16) 
         {
-            numPages = cantPag;
+            NumPages = cantPag;
+            Id = genId++;
         }
 
         public int GetNumberPages() 
         { 
-            return numPages; 
+            return NumPages; 
         }
     }
 }
