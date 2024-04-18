@@ -62,8 +62,7 @@ namespace Web.Controllers
             {
                 if (book.Id == id)
                 {
-                    var result = book;
-                    return $"El libro con el id {id} tiene {result.GetNumberPages()} paginas";
+                    return $"El libro con el id [{id}] tiene {book.GetNumberPages()} paginas";
                 }
             }
             
