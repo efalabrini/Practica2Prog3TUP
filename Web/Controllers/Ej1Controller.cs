@@ -1,29 +1,30 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Web.Ej1;
+using Practica2Prog3TUP.Ej1;
 
-namespace Web.Controllers
+namespace Practica2Prog3TUP.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class Ej1Controller : ControllerBase
     {
         [HttpGet()]
-        public List<string> Get([FromQuery] string persona1, [FromQuery] string persona2, [FromQuery] string persona3 )
+        public IList<string> Get([FromQuery] IList<string> names)
         {
-            List<Persona> lista = [];
-            lista.Add(new Persona(persona1));
-            lista.Add(new Persona(persona2));
-            lista.Add(new Persona(persona3));
+            List<Person> persons = new List<Person>(); 
 
-            List<string> result = [];
-
-            foreach (Persona persona in lista)
+            foreach (var name in names)
             {
-                result.Add(persona.GetSaludo());
+                persons.Add(new Person(name));
             }
 
-            return result;
+            var namesQuery =
+                from person in persons
+                select person.Name;
+
+            return namesQuery.ToList();
         }
+
     }
 }
