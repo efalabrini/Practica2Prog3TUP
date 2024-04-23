@@ -12,8 +12,15 @@ namespace Web.Controllers
         public ActionResult GetPruebaAuto([FromQuery] int cantidadCombustible)
         {
             Coche coche = new Coche(0);
-            coche.CargarCombustible(cantidadCombustible);
-            return Ok(coche.Conducir());
+
+            if(coche.CargarCombustible(cantidadCombustible))
+            {
+                return Ok(coche.Conducir());
+            }
+            else
+            {
+                return BadRequest("cantidad de combustible no valido");
+            }
         }
         
 

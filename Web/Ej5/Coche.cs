@@ -19,8 +19,13 @@
 
         public bool CargarCombustible(int cantidadCombustible)
         {
-            gasolina += cantidadCombustible;
-            return true;
+            if (cantidadCombustible > 0)
+            {
+                gasolina += cantidadCombustible;
+                return true;
+            }
+            return false;   
+            
         }
     }
 }
