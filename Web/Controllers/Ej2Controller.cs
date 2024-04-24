@@ -14,11 +14,15 @@ namespace Web.Controllers
         [HttpGet("[action]")]
         public ActionResult<string> GetBookStandar([FromQuery] int numPages)
         {
-            var book1 = new PhotoBook(numPages);
+            PhotoBook book1; 
 
             if (numPages == 0)
             {
-                book1 = new PhotoBook();
+               book1 = new PhotoBook();
+            }
+            else
+            {
+                book1 = new PhotoBook(numPages);
             }
 
             return $"El libro tiene: {book1.GetNumberPages()}";
