@@ -2,7 +2,7 @@
 {
     public class PersonajeDeFuerza : Personaje, IMoverse
     {
-        public PersonajeDeFuerza(string nombre, int agilidad, int magia)
+        public PersonajeDeFuerza(string nombre, float agilidad, float magia)
         {
             Nombre = nombre;
             Agilidad = agilidad;
@@ -33,3 +33,5 @@
 
     }
 }
+
+

@@ -2,15 +2,16 @@
 {
     public class Enemigo : IMoverse
     {
-        public int Vida { get; set; }
+        public float Vida { get; set; }
         public int Nivel { get; set; }
 
-        public Enemigo(int vida, int nivel)
+
+        public Enemigo(float vida, int nivel)
         {
             Vida = vida;
             Nivel = nivel;
         }
-        public int GetVida()
+        public float GetVida()
         {
             return Vida;    
         }
@@ -28,5 +29,14 @@
         {
             return $"Me movi {posicion}";
         }
+
+        public void DañoRecibido(float dañoTotalRecibido) 
+        {
+            Vida -= dañoTotalRecibido;
+            
+            
+        }
     }
 }
+
+
