@@ -16,7 +16,7 @@
                 return "El coche esta siendo manejado";
             }
 
-            return "";
+            return "El coche no tiene nafta";
         }
         public bool ChargeFuel(int cantFuel)
         {
