@@ -4,7 +4,7 @@
     {
         public int Fuel { get; set; }
 
-        public Car(int initialfuel)
+        public Car(int initialfuel = 0)
         {
             Fuel = initialfuel; 
         }
