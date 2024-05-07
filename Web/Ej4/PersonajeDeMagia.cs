@@ -1,7 +1,10 @@
-﻿namespace Web.Ej4
+﻿using System.Text.Json.Serialization;
+
+namespace Web.Ej4
 {
     public class PersonajeDeMagia : Personaje, IMoverse
     {
+        [JsonConstructor] //este decorarador indica al deserializador JSON que utilice este constructor
         public PersonajeDeMagia(string nombre, float agilidad, float magia, float fuerza)
         {
             Nombre = nombre;
@@ -10,6 +13,7 @@
             Fuerza = fuerza;
         }
 
+        
         public PersonajeDeMagia(string nombre, float agilidad, float fuerza)
         {
             Nombre = nombre;

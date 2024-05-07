@@ -11,37 +11,33 @@ namespace Web.Controllers
         static List<Personaje> listaPersonajes = new List<Personaje>();
         static List<Enemigo> listaEnemigos = new List<Enemigo>();
 
-        [HttpGet("[action]")]
-        public ActionResult<string> GetPersonajeFuerza([FromQuery] string nombre, [FromQuery] float agilidad, [FromQuery] float magia)
+        [HttpPost("[action]")]
+        public ActionResult CreatePersonajeFuerza([FromBody] PersonajeDeFuerza personajeDeFuerza)
         {
-            PersonajeDeFuerza pFuerza = new PersonajeDeFuerza(nombre, agilidad, magia);
-            listaPersonajes.Add(pFuerza);   
-            return $"Creaste un personaje de fuerza llamado {nombre} con {agilidad} de agilidad y {magia} de magia";
-
+            listaPersonajes.Add(personajeDeFuerza);
+            return CreatedAtAction(nameof(CreatePersonajeFuerza), personajeDeFuerza);
         }
 
-        [HttpGet("[action]")]
-        public ActionResult<string> GetPersonajeAgilidad([FromQuery] string nombre, [FromQuery] float agilidad, [FromQuery] float magia, [FromQuery] float fuerza)
+
+        [HttpPost("[action]")]
+        public ActionResult CreatePersonajeAgilidad([FromBody] PersonajeDeAgilidad personajeDeAgilidad)
         {
-            PersonajeDeAgilidad pAgilidad = new PersonajeDeAgilidad(nombre, agilidad, magia, fuerza);
-            listaPersonajes.Add (pAgilidad);
-            return $"Creaste un personaje de agilidad llamado {nombre} con {agilidad} de agilidad, {magia} de magia y {fuerza} de fuerza";
+            listaPersonajes.Add(personajeDeAgilidad);
+            return CreatedAtAction(nameof(CreatePersonajeAgilidad), personajeDeAgilidad);
         }
 
-        [HttpGet("[action]")]
-        public ActionResult<string> GetPersonajeMagia([FromQuery] string nombre, [FromQuery] float agilidad, [FromQuery] float magia, [FromQuery] float fuerza)
+        [HttpPost("[action]")]
+        public ActionResult CreatePersonajeMagia([FromBody] PersonajeDeMagia personajeDeMagia)
         {
-            PersonajeDeMagia pMagia = new PersonajeDeMagia(nombre, agilidad, magia, fuerza);
-            listaPersonajes.Add(pMagia);
-            return $"Creaste un personaje de magia llamado {nombre} con {agilidad} de agilidad, {magia} de magia y {fuerza} de fuerza";
+            listaPersonajes.Add(personajeDeMagia);
+            return CreatedAtAction(nameof(CreatePersonajeMagia), personajeDeMagia);
         }
 
-        [HttpGet("[action]")]
-        public ActionResult<string> GetEnemigo([FromQuery] float vida, [FromQuery] int nivel)
+        [HttpPost("[action]")]
+        public ActionResult CreateEnemigo([FromBody] Enemigo enemigo)
         {
-            Enemigo enemigo = new Enemigo(vida, nivel);
             listaEnemigos.Add(enemigo);
-            return $"Creaste un enemigo con vida {enemigo.GetVida()} y nivel {enemigo.GetNivel()}";
+            return CreatedAtAction(nameof(CreateEnemigo), enemigo);
 
         }
 
@@ -74,7 +70,6 @@ namespace Web.Controllers
 
 
     }
-
 
 
 
