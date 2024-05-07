@@ -2,6 +2,6 @@
 {
     public static class PhotoBooksListInstance
     {
-        public static PhotoBooksList List {  get; } = new PhotoBooksList();
+        public static List<PhotoBook> List {  get; } = new ();
     }
 }
