@@ -2,8 +2,8 @@
 {
     public interface IVehicle
     {
-         public string Drive();
-         public bool ChargeFuel(int cantFuel);
-        
+        int Fuel { get; set; }
+        void Drive();
+        bool ChargeFuel(int fuel);
     }
 }

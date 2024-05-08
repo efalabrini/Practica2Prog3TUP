@@ -2,26 +2,28 @@
 {
     public class Car : IVehicle
     {
-        public int Fuel { get; set; }
-
-        public Car(int initialfuel = 0)
+        
+        public Car(int fuel)
         {
-            Fuel = initialfuel; 
+
+        }
+
+        public int Fuel { get ; set ; }
+
+        public bool ChargeFuel(int fuel)
+        {
+            Fuel = fuel;
+            return true;
         }
 
         public string Drive()
         {
-            if (Fuel > 0)
+            if (Fuel > 0) 
             {
-                return "El coche esta siendo manejado";
+                return "conduciendo";
+            }else {
+                return "no hay nafta";
             }
-
-            return "El coche no tiene nafta";
-        }
-        public bool ChargeFuel(int cantFuel)
-        {
-            Fuel += cantFuel;
-            return true;
         }
     }
 }
