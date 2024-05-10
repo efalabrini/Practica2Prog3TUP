@@ -1,14 +1,13 @@
 ﻿namespace Web.Ej2
 {
     public class PhotoBook
-    {   
+    {
+        protected int NumPages { get; set; }
+        public int Id { get; }
         public static int Cont = 0;
 
-        public PhotoBook() 
-        {
-            NumPages = 16;
-            Id = Cont;
-            Cont++;
+        public PhotoBook() : this (16)
+        {            
         }
 
         public PhotoBook(int numPages)
@@ -17,10 +16,7 @@
             Id = Cont;
             Cont++;
         }
-        protected int NumPages { get; set; }
-
-        public int Id { get; set; }
-
+        
         public int GetNumberPages()
         {
             return NumPages;
