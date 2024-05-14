@@ -7,6 +7,42 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Ej1\**" />
+    <Compile Remove="Ej2\**" />
+    <Compile Remove="Ej3HideMethod\**" />
+    <Compile Remove="Ej3OverrideMethod\**" />
+    <Compile Remove="Ej4\**" />
+    <Compile Remove="Ej5\**" />
+    <Content Remove="Ej1\**" />
+    <Content Remove="Ej2\**" />
+    <Content Remove="Ej3HideMethod\**" />
+    <Content Remove="Ej3OverrideMethod\**" />
+    <Content Remove="Ej4\**" />
+    <Content Remove="Ej5\**" />
+    <EmbeddedResource Remove="Ej1\**" />
+    <EmbeddedResource Remove="Ej2\**" />
+    <EmbeddedResource Remove="Ej3HideMethod\**" />
+    <EmbeddedResource Remove="Ej3OverrideMethod\**" />
+    <EmbeddedResource Remove="Ej4\**" />
+    <EmbeddedResource Remove="Ej5\**" />
+    <None Remove="Ej1\**" />
+    <None Remove="Ej2\**" />
+    <None Remove="Ej3HideMethod\**" />
+    <None Remove="Ej3OverrideMethod\**" />
+    <None Remove="Ej4\**" />
+    <None Remove="Ej5\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Ej1Controller.cs" />
+    <Compile Remove="Controllers\Ej2Controller.cs" />
+    <Compile Remove="Controllers\Ej3HideMethodController.cs" />
+    <Compile Remove="Controllers\Ej3OverrideMethodController.cs" />
+    <Compile Remove="Controllers\Ej4Controller.cs" />
+    <Compile Remove="Controllers\Ej5Controller.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
