@@ -3,7 +3,7 @@
     public interface IVehicle
     {
         int Fuel { get; set; }
-        void Drive();
+        string Drive();
         bool ChargeFuel(int fuel);
     }
 }
