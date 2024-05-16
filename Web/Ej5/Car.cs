@@ -5,7 +5,7 @@
         
         public Car(int fuel)
         {
-
+            Fuel = fuel;
         }
 
         public int Fuel { get ; set ; }
